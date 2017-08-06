@@ -1,0 +1,45 @@
+body {
+	border:0px;
+	padding:0px;
+	background-color:silver;
+
+}
+
+#container {
+	width:900px;
+	height:600px;
+	background-color:white;	
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+
+.pane {
+	float:left;
+	width:35%;
+	height:80%;
+	border:2px solid black;	
+}
+
+#leftpane {
+	position:absolute;
+	top:50%;
+	left:33%;
+	transform:translate(-70%,-50%);
+}
+
+#rightpane {
+	position:absolute;
+	top:50%;
+	left:67%;
+	transform:translate(-30%,-50%);
+}
+
+#or {
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+
