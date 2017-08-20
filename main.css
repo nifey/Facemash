@@ -6,8 +6,8 @@ body {
 }
 
 #container {
-	width:400px;
-	height:600px;
+	width:800px;
+	height:500px;
 	background-color:white;	
 	position:absolute;
 	top:50%;
@@ -36,7 +36,7 @@ body {
 	transform:translate(-30%,-50%);
 }
 
-#or {
+#or,img.image {
 	position:absolute;
 	top:50%;
 	left:50%;
