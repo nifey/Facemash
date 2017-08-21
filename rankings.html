@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Facemash Rankings</title>
+<script type="text/javascript" >
+function rankings(){
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST","update.php",true);
+	xhr.overrideMimeType("application/json");
+	xhr.send('{"jsontype":"rankings"}');
+	xhr.addEventListener("readystatechange",processRequest,false);
+	function processRequest(e){
+		if (xhr.readyState==4&&xhr.status==200){
+			var response = JSON.parse(xhr.responseText);
+			document.getElementById("img1").src=response.r1;
+			document.getElementById("img2").src=response.r2;
+			document.getElementById("img3").src=response.r3;
+			document.getElementById("img4").src=response.r4;
+			document.getElementById("img5").src=response.r5;
+			document.getElementById("img6").src=response.r6;
+			document.getElementById("img7").src=response.r7;
+			document.getElementById("img8").src=response.r8;
+			document.getElementById("img9").src=response.r9;
+			document.getElementById("img10").src=response.r10;
+		}
+	}
+}
+</script>
+<style>
+body {
+	border:0px;
+	padding:0px;
+	background-color:silver;
+}
+#header {
+	background-color:white;
+	margin:10px 10px 0px 10px;
+	text-align:center;
+	text-decoration:bold;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+div.pic {
+	background-color:white;
+	display:block;
+	width:280px;
+	height:420px;
+	float:left;
+	margin:10px 10px 10px 10px;
+}
+img.image {
+	position:relative;
+	top:40%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+div.rank {
+	margin:20px auto;
+	text-align:center;
+	font-size:20px;
+}
+
+</style>
+</head>
+<body onLoad="rankings();">
+	<div id = "header">Rankings</div>
+	<div class="pic">
+		<div class="rank">1</div>
+		<img class="image" id="img1" src=#/>
+	</div>
+	<div class="pic">
+		<div class="rank">2</div>
+		<img class="image" id="img2" src=#/>
+	</div>
+	<div class="pic">
+		<div class="rank">3</div>
+		<img class="image" id="img3" src=#/>
+	</div>
+	<div class="pic">
+		<div class="rank">4</div>
+		<img class="image" id="img4" src=#/>
+	</div>
+	<div class="pic">
+		<div class="rank">5</div>
+		<img class="image" id="img5" src=#/>
+	</div>
+	<div class="pic">
+		<div class="rank">6</div>
+		<img class="image" id="img6" src=#/>
+	</div>
+	<div class="pic">
+		<div class="rank">7</div>
+		<img class="image" id="img7" src=#/>
+	</div>
+	<div class="pic">
+		<div class="rank">8</div>
+		<img class="image" id="img8" src=#/>
+	</div>
+	<div class="pic">
+		<div class="rank">9</div>
+		<img class="image" id="img9" src=#/>
+	</div>
+	<div class="pic">
+		<div class="rank">10</div>
+		<img class="image" id="img10" src=#/>
+	</div>
+</body>

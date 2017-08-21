@@ -1,5 +1,11 @@
 <?php 
 
+
+// Change database information              Database    Username     Password
+// 				              name
+$pdo = new PDO("mysql:host=127.0.0.1;dbname=facemash",'facemasher','mashtheface');
+
+
 function klogic($rating,$matchcount){
 	if($rating>2400)
 		return 20;
@@ -7,7 +13,6 @@ function klogic($rating,$matchcount){
 		return 40;
 }
 
-$pdo = new PDO("mysql:host=127.0.0.1;dbname=facemash",'facemasher','mashtheface');
 $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 if ($_SERVER['REQUEST_METHOD']=="POST"){
@@ -103,7 +108,17 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
 				echo json_encode($result);
 			}
 		}
-	} 
+	} else if ($input->jsontype=="rankings"){
+
+		$sql="SELECT * from `images` ORDER by rating DESC LIMIT 10;";
+		$result=array();
+		$i=1;
+		foreach($pdo->query($sql) as $row){
+			$result['r'.$i]=$row['src'];
+			$i++;
+		}
+		echo json_encode($result);
+	}
 
 } else {
 

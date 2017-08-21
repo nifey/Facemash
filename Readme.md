@@ -10,7 +10,7 @@ images.sql is the sql dump of the "images" table that the php code needs. The sc
 ### Steps to deploy the website
 1. Install Apache, MySQL and PHP.
 
-2. Create a mysql database named facemash.
+2. Change database name, username and password in update.php file.
 
 3. Import the images table from images.sql. In PHPMyAdmin we can do this by clicking on import tab and loading the images.sql file.
 

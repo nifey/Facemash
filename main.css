@@ -43,3 +43,11 @@ body {
 	transform:translate(-50%,-50%);
 }
 
+#rank {
+	position:absolute;
+	top:95%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	text-decoration:none;
+	color:Black;
+}

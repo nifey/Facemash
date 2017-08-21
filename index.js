@@ -44,4 +44,3 @@ function update(url1,url2){
 	document.getElementById("img1").src=url1;
 	document.getElementById("img2").src=url2;
 }
-
